@@ -24,7 +24,7 @@ s5  = st.number_input('Log of Serum Triglycerides Level')
 s6  = st.number_input('Body Glucose Level ')
 
 if st.button('Predict'):
-    input_data = np.array([[age, sex_choice, bmi, bp, s1, s2, s3, s4, s5, s6]])
+    input_data = np.array([[age, sex, bmi, bp, s1, s2, s3, s4, s5, s6]])
     scaled_input = scaler.transform(input_data)
     result = model.predict(scaled_input)
     st.success(f'Prediction: {result[0]}')
